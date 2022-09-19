@@ -1,5 +1,13 @@
 <?php
-   // test cookies if is set, display if set
+    # test cookies if is set, display if set
+    # the values entered in the variables starts with cookie is read here
+    if(isset($_COOKIE['auth']) && isset($_COOKIE['username']) && isset($_COOKIE['password'])){
+        echo "Cookies is set, ";
+
+    # return to index.php if 20 seconds runs out
+    }elseif(!isset($_COOKIE['auth']) && !isset($_COOKIE['username']) && !isset($_COOKIE['password'])){
+        header("location: index.php");
+    }
 ?>
 <html lang="en">
 <head>
