@@ -45,7 +45,7 @@ session_start();
     echo "<br>";
     echo "Where are these session variables stored?"; 
     echo "<br>";
-    $_SESSION['stor']="--Sagot nyo";
+    $_SESSION['stor']="--Session variables stored and that are only saved on the server.";
     echo $_SESSION['stor'];
     ?>
 </body>
