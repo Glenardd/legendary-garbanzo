@@ -1,5 +1,25 @@
 <?php 
-session_start();
+    # to avoid undefined errors from the post method
+    error_reporting(0);
+
+    # used post method to get the data's form private
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    #cookie variables
+    $cookie_auth = "auth";
+    $cookie_value = "OK";
+    $cookie_user = "username";
+    $cookie_pass = "password";
+
+    #cookie set with time limit of 20 seconds
+    #the loggedin.php will read this
+    if(!empty($username) && !empty($password)){
+        setcookie($cookie_user, $username, time()+20);
+        setcookie($cookie_pass, $password, time()+20);
+        setcookie($cookie_auth, $cookie_value, time()+20);
+        header("location: loggedin.php");
+    }
 ?>
 <html lang="en">
 <head>
@@ -16,12 +36,12 @@ session_start();
     <?php
     echo "What function do we use to start a session?";
     echo "<br>";
-    $_SESSION['func']="--We use the function session_start(); to start a session.";
-    echo $_SESSION['func'];
+    echo "--We use the function session_start(); to start a session.";
     echo "<br>";
     echo "Where are these session variables stored?"; 
     echo "<br>";
-    $_SESSION['stor']="--Session variables stored and that are only saved on the server.";
+    echo "--Session variables stored and that are only saved on the server.";
+    echo "\"edit here\"";
 
     ?>
 </body>
