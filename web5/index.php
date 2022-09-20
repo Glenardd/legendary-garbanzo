@@ -9,7 +9,7 @@
 		 if(isset( $_SESSION['$num_visits']) ){
 		  		 $_SESSION['$num_visits'] +=1;
 		   }else {
-		      $_SESSION['$num_visits'] = 0;
+		      $_SESSION['$num_visits'] = 1;
 		      echo " <h2> Wow </h2> Thank you for visiting the page a lot. ";
 		   		
 		   }
